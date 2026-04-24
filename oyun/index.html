@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Özel Eğitim Portalı</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <div id="ust-menu">
+        <div class="menu-baslik" onclick="menuAcKapat()">☰ Seçenekler</div>
+        <div id="menu-icerik" class="gizli">
+            <div onclick="location.reload()">🏠 Ana Menü</div>
+            <div onclick="oyunuBitir()">❌ Programı Bitir</div>
+        </div>
+    </div>
+
+    <div id="ana-giris-ekrani">
+        <h1 class="ana-baslik">Bugün Ne Çalışalım?</h1>
+        <div class="mod-kartlari">
+            <div class="mod-kart" onclick="modSec('rutin')">
+                <img src="Rutinler.jpeg" alt="Rutinler">
+                <h2>Rutinler</h2>
+                <p>Sıralama Yapalım</p>
+            </div>
+            <div class="mod-kart" onclick="modSec('iletisim')">
+                <img src="İletişim.jpeg" alt="İletişim">
+                <h2>İletişim</h2>
+                <p>Karakterle Soru-Cevap</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="ana-ekran" class="gizli">
+        <h1 style="color:white; font-size:40px;">Bölüm Seç</h1>
+        <div class="part-kartlari">
+            <div class="kart" onclick="partBaslat(1)">
+                <h2>1. BÖLÜM</h2>
+                <p>Hazırlık</p>
+            </div>
+            <div class="kart" onclick="partBaslat(2)">
+                <h2>2. BÖLÜM</h2>
+                <p>Fırçalama</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="oyun-konteynir" class="gizli">
+        <div id="yonerge-ekrani" class="gizli">
+            <div id="yonerge-kutusu"><h2 id="yonerge-metni"></h2></div>
+        </div>
+        <h1 id="oyun-basligi"></h1>
+        <div id="oyun-icerik-alani">
+            <div id="havuz-alani" class="kutu-grubu"></div>
+            <p id="ipucu" style="color: #718096; font-weight: bold; margin: 15px 0;">YÖNERGEYE GÖRE SIRALA</p>
+            <div id="secilenler-alani" class="kutu-grubu"></div>
+            <div id="mesaj-alani">
+                <div id="mesaj"></div>
+                <button id="devam-btn" class="gizli" onclick="sonrakiPartaGec()">DEVAM ET ➔</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="iletisim-konteynir" class="gizli">
+        <div class="karakter-soru-alani">
+            <img src="Ahtapot.png" id="rehber-karakter" alt="Karakter">
+            <div class="konusma-balonu">
+                <p id="iletisim-soru-metni"></p>
+            </div>
+        </div>
+        <div class="iletisim-siklar">
+            <button class="metin-sik-kart" onclick="iletisimCevapKontrol(0)" id="sik-metin-0"></button>
+            <button class="metin-sik-kart" onclick="iletisimCevapKontrol(1)" id="sik-metin-1"></button>
+        </div>
+        <div id="iletisim-mesaj" style="font-size: 30px; font-weight: bold; margin-top: 20px;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
